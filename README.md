@@ -149,7 +149,6 @@ mvn clean test-compile
 src/main/java/com/issuetracker/userinterface/
 ├── IssueTrackerCLI.java     # Interactive CLI application
 ├── CLIFeatureTester.java    # Automated feature testing
-└── IssueTester.java         # Legacy tester
 ```
 
 ### Test Structure
