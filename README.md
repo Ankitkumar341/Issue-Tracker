@@ -164,14 +164,6 @@ src/test/java/com/issuetracker/test/
 - Use `database.properties.template` as reference
 - Never commit actual database credentials
 
-## Contributing
-
-1. Fork repository
-2. Create feature branch
-3. Follow Java conventions
-4. Write tests for new features
-5. Submit pull request
-
 ## Troubleshooting
 
 ### Common Issues
@@ -189,13 +181,6 @@ src/test/java/com/issuetracker/test/
 - `JDBC_Database_Connection_Guide.md`: Database integration details
 - `sql/MIGRATION.md`: Database setup instructions
 
-## License
-
-This project is licensed under the MIT License.
-
----
-
-*For technical support, contact the development team.*
 
 
 
