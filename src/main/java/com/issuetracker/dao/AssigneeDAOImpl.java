@@ -1,8 +1,10 @@
 package com.issuetracker.dao;
 
+import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.issuetracker.model.Assignee;
 import com.issuetracker.model.Unit;
@@ -14,81 +16,53 @@ public class AssigneeDAOImpl implements AssigneeDAO
     public AssigneeDAOImpl()
     {
 	 Assignee assigneeOne = new Assignee("MTI-A-ADM-001", "Carry Luke",
-	 "carry.luke", Unit.ADMINISTRATION,
-	 LocalDate.now().minusWeeks(300), 3);
+	 "carry.luke", Unit.ADMINISTRATION, 3);
 
 	 Assignee assigneeTwo = new Assignee("MTI-A-ADM-002", "Rodrick Luther",
 	 "rodrick_luther",
-	 Unit.ADMINISTRATION,
-	 LocalDate.now().minusWeeks(259), 3);
+	 Unit.ADMINISTRATION, 3);
 
 	 Assignee assigneeThree = new Assignee("MTI-A-CSG-001", "Miki Worth",
-	 "miki.w", Unit.CONSIGNMENT,
-	 LocalDate.now().minusWeeks(200),
-	 1);
+	 "miki.w", Unit.CONSIGNMENT, 1);
 
 	 Assignee assigneeFour = new Assignee("MTI-A-CSG-002", "Carlena Fife",
-	 "c_fife", Unit.CONSIGNMENT,
-	 LocalDate.now().minusWeeks(167),
-	 0);
+	 "c_fife", Unit.CONSIGNMENT, 0);
 
 	 Assignee assigneeFive = new Assignee("MTI-A-CSG-003", "Cedrick Padgett",
-	 "c.padgett", Unit.CONSIGNMENT,
-	 LocalDate.now().minusWeeks(243),
-	 0);
+	 "c.padgett", Unit.CONSIGNMENT, 0);
 
 	 Assignee assigneeSix = new Assignee("MTI-A-CSG-004", "Tyrell Eaves",
-	 "tyrell_e", Unit.CONSIGNMENT,
-	 LocalDate.now().minusWeeks(300), 0);
+	 "tyrell_e", Unit.CONSIGNMENT, 0);
 
 	 Assignee assigneeSeven = new Assignee("MTI-A-CSG-005", "Jewel Seaton",
-	 "jewel_seaton", Unit.CONSIGNMENT,
-	 LocalDate.now().minusWeeks(259),
-	 0);
+	 "jewel_seaton", Unit.CONSIGNMENT, 0);
 
 	 Assignee assigneeEight = new Assignee("MTI-A-PAY-001", "Larita Conklin",
-	 "larita.conklin", Unit.PAYMENT,
-	 LocalDate.now().minusWeeks(200),
-	 1);
+	 "larita.conklin", Unit.PAYMENT, 1);
 
 	 Assignee assigneeNine = new Assignee("MTI-A-PAY-002", "Elyse Chu",
-	 "elyse.chu", Unit.PAYMENT,
-	 LocalDate.now().minusWeeks(167),
-	 1);
+	 "elyse.chu", Unit.PAYMENT, 1);
 
 	 Assignee assigneeTen = new Assignee("MTI-A-SHP-001", "Elane Lester",
-	 "elane_lester", Unit.SHIPMENT,
-	 LocalDate.now().minusWeeks(243), 1);
+	 "elane_lester", Unit.SHIPMENT, 1);
 
 	 Assignee assigneeEleven = new Assignee("MTI-A-SHP-002",
 	 "Valery Champion", "valery_c",
-	 Unit.SHIPMENT,
-	 LocalDate.now().minusWeeks(300),
-	 0);
+	 Unit.SHIPMENT, 0);
 
 	 Assignee assigneeTwelve = new Assignee("MTI-A-SHP-003", "Aaron Godfrey",
-	 "aaron.g", Unit.SHIPMENT,
-	 LocalDate.now().minusWeeks(259),
-	 0);
+	 "aaron.g", Unit.SHIPMENT, 0);
 
 	 Assignee assigneeThirteen = new Assignee("MTI-A-SHP-004", "Jarvis Ivy",
-	 "jarvis_ivy", Unit.SHIPMENT,
-	 LocalDate.now()
-	 .minusWeeks(200),
-	 0);
+	 "jarvis_ivy", Unit.SHIPMENT, 0);
 
 	 Assignee assigneeFourteen = new Assignee("MTI-A-SHP-005",
 	 "Zackary Marble", "zackary.m",
-	 Unit.SHIPMENT,
-	 LocalDate.now()
-	 .minusWeeks(167),
-	 0);
+	 Unit.SHIPMENT, 0);
 
 	 Assignee assigneeFifteen = new Assignee("MTI-A-SHP-006",
 	 "Williams Weir",
-	 "williams_weir", Unit.SHIPMENT,
-	 LocalDate.now().minusWeeks(243),
-	 0);
+	 "williams_weir", Unit.SHIPMENT, 0);
 
 	 assigneeList = List.of(assigneeOne, assigneeTwo, assigneeThree,
 	 assigneeFour, assigneeFive, assigneeSix,
@@ -113,8 +87,6 @@ public class AssigneeDAOImpl implements AssigneeDAO
 	 .filter(assignee -> issueCode.equals(assignee.getAssigneeId()
 	 .split("-")[2]))
 	 .collect(Collectors.toList());
-
-	return null;
     }
 
     @Override
@@ -125,7 +97,5 @@ public class AssigneeDAOImpl implements AssigneeDAO
 	 assigneeEmail.equals(assignee.getAssigneeEmail()))
 	 .findFirst()
 	 .orElse(null);
-
-	return null;
     }
 }

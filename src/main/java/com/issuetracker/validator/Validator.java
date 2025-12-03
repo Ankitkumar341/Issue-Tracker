@@ -41,4 +41,14 @@ public class Validator
 
 	return null;
     }
+    
+    public boolean isValidEmail(String email) {
+        if (email == null || email.trim().isEmpty()) {
+            return false;
+        }
+        
+        // Simple email validation regex
+        String emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+        return email.trim().matches(emailRegex);
+    }
 }

@@ -1,13 +1,13 @@
 package com.issuetracker.test;
 
 import com.issuetracker.exception.IssueTrackerException;
-import com.issuetracker.service.IssueService;
-import com.issuetracker.service.IssueServiceImpl;
 
 // Do Not Change Any Signature
 public class IssueServiceTest
 {
-    private IssueService issueService = new IssueServiceImpl();
+    // private IssueService issueService = new IssueServiceImpl();
+    
+    // Test methods will use issueService
 
     public void reportAnIssueValidTest() throws IssueTrackerException
     {

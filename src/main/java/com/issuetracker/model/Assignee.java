@@ -1,14 +1,16 @@
 package com.issuetracker.model;
 
-
 public class Assignee
 {
-private String assigneeId ;
-private String assigneeName ;
-private String assigneeEmail ;
-Unit wokringUnit ;
-private  int numberOfIssuesActive  ;
+    private String assigneeId;
+    private String assigneeName;
+    private String assigneeEmail;
+    private Unit wokringUnit;
+    private int numberOfIssuesActive;
 
+    public Assignee() {
+        // Default constructor
+    }
 
     public Assignee(String assigneeId, String assigneeName, String assigneeEmail, Unit wokringUnit, int numberOfIssuesActive) {
         this.assigneeId = assigneeId;
@@ -48,6 +50,19 @@ private  int numberOfIssuesActive  ;
 
     public void setWokringUnit(Unit wokringUnit) {
         this.wokringUnit = wokringUnit;
+    }
+    
+    // Additional methods for compatibility
+    public void setAssigneeEmailId(String email) {
+        this.assigneeEmail = email;
+    }
+    
+    public void setUnit(Unit unit) {
+        this.wokringUnit = unit;
+    }
+    
+    public void setActiveIssuesCount(int count) {
+        this.numberOfIssuesActive = count;
     }
 
     public int getNumberOfIssuesActive() {

@@ -1,8 +1,23 @@
-log/
-bin/
+# Compiled class files
 target/
+bin/
 
-*.json
+# Log files
+log/
+*.log
 
+# IDE files
 .factorypath
 .settings/
+.classpath
+.project
+
+# Sensitive configuration files
+src/main/resources/database.properties
+
+# JSON files (if containing sensitive data)
+*.json
+
+# OS generated files
+.DS_Store
+Thumbs.db

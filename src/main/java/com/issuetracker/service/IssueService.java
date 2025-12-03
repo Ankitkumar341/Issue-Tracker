@@ -59,4 +59,16 @@ public interface IssueService
      */
     public abstract List<Issue> deleteIssues() throws IssueTrackerException;
 
+    /**
+     * @params
+     *         issueId - The issue id to assign
+     *         userId - The user id to assign the issue to
+     * 
+     * @operation Assigns an issue to a specific user
+     * 
+     * @returns
+     *          Boolean - Result of the assignment
+     */
+    public abstract Boolean assignIssue(String issueId, int userId) throws IssueTrackerException;
+
 }

@@ -1,6 +1,7 @@
 package com.issuetracker.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Issue
 {
@@ -11,12 +12,18 @@ public class Issue
     private LocalDate updatedOn;
     private String assigneeEmail;
     private IssueStatus status;
+    private Priority priority;
+    private int reportedByUserId;
+    private int assignedToUserId;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    public Issue() {}
 
     public Issue(String issueId, String issueDescription, Unit issueUnit,
 		 LocalDate reportedOn, LocalDate updatedOn,
 		 String assigneeEmail, IssueStatus status)
     {
-	super();
 	this.issueId = issueId;
 	this.issueDescription = issueDescription;
 	this.issueUnit = issueUnit;
@@ -24,6 +31,27 @@ public class Issue
 	this.updatedOn = updatedOn;
 	this.assigneeEmail = assigneeEmail;
 	this.status = status;
+	this.priority = Priority.MEDIUM;
+	this.createdAt = LocalDateTime.now();
+	this.updatedAt = LocalDateTime.now();
+    }
+    
+    public Issue(String issueId, String issueDescription, Unit issueUnit,
+                 LocalDate reportedOn, String assigneeEmail, IssueStatus status, 
+                 Priority priority, int reportedByUserId, int assignedToUserId)
+    {
+        this.issueId = issueId;
+        this.issueDescription = issueDescription;
+        this.issueUnit = issueUnit;
+        this.reportedOn = reportedOn;
+        this.updatedOn = LocalDate.now();
+        this.assigneeEmail = assigneeEmail;
+        this.status = status;
+        this.priority = priority;
+        this.reportedByUserId = reportedByUserId;
+        this.assignedToUserId = assignedToUserId;
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     public String getIssueId()
@@ -94,5 +122,45 @@ public class Issue
     public void setStatus(IssueStatus status)
     {
 	this.status = status;
+    }
+    
+    public Priority getPriority() {
+        return priority;
+    }
+    
+    public void setPriority(Priority priority) {
+        this.priority = priority;
+    }
+    
+    public int getReportedByUserId() {
+        return reportedByUserId;
+    }
+    
+    public void setReportedByUserId(int reportedByUserId) {
+        this.reportedByUserId = reportedByUserId;
+    }
+    
+    public int getAssignedToUserId() {
+        return assignedToUserId;
+    }
+    
+    public void setAssignedToUserId(int assignedToUserId) {
+        this.assignedToUserId = assignedToUserId;
+    }
+    
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+    
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+    
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+    
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }
